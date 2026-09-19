@@ -1,0 +1,71 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 200px 1fr 60px;
+    grid-template-rows: auto 1fr auto;
+    width: 100%;
+    height: 100vh;
+}
+
+.box {
+    border: 2px solid #000;
+    transition: background 0.3s;
+}
+
+.zone-1 {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: #1e88e5;
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+.zone-1:hover { background-color: #04264e; cursor: pointer; }
+
+.zone-2 {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    background-color: #ffd43b;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+.zone-2:hover { background-color: #a37b00; cursor: pointer; }
+
+.zone-3 {
+    grid-column: 2;
+    grid-row: 3;
+    background-color: #1e88e5;
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.zone-3:hover { background-color: #04264e; cursor: pointer; }
+
+.zone-4 {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: white;
+    padding: 20px;
+}
+.zone-4:hover { background-color: #a09f9f; }
+
+.zone-5 {
+    grid-column: 3;
+    grid-row: 1 / 4;
+    background-color: white;
+}
+.zone-5:hover { background-color: #a09f9f; }
