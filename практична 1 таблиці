@@ -1,0 +1,79 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+td {
+    border: 2px solid #000;
+}
+
+.layout {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.zone-1 {
+    background-color: #1e88e5;
+    color: white;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 28px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.zone-2 {
+    background-color: #ffd43b;
+    width: 200px;
+    vertical-align: top;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.zone-3 {
+    background-color: #1e88e5;
+    color: white;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    transition: background 0.3s;
+}
+
+.zone-4 {
+    background-color: white;
+    vertical-align: top;
+    padding: 20px;
+    transition: background 0.3s;
+}
+
+.zone-5 {
+    background-color: white;
+    width: 60px;
+    transition: background 0.3s;
+}
+
+.zone-1:hover,
+.zone-3:hover {
+    background-color: #04264e;
+    cursor: pointer;
+}
+
+.zone-2:hover {
+    background-color: #a37b00;
+    cursor: pointer;
+}
+
+.zone-4:hover {
+    background-color: #a09f9f;
+}
+
+.zone-5:hover {
+    background-color: #a09f9f;
+}
