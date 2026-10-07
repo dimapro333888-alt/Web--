@@ -1,0 +1,421 @@
+/* 
+    СКИДАННЯ
+    */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* 
+    CSS-ЗМІННІ
+    */
+:root {
+   
+    --color-bg: #f4f5f7;
+    --color-surface: #ffffff;
+    --color-text: #222222;
+    --color-text-muted: #666666;
+    --color-accent: #2f6fed;
+    --color-accent-hover: #1a4fb8;
+    --color-footer-bg: #222222;
+    --color-footer-text: #ffffff;
+    --color-aside-bg: #fff3cd;
+    --color-border: #e2e5ea;
+
+    --gap: 1rem;
+    --gap-sm: 0.5rem;
+    --gap-lg: 1.5rem;
+   
+    --radius: 8px;
+    --radius-lg: 12px;
+  
+    --font-sm: 0.875rem;
+    --font-base: 1rem;
+    --font-lg: 1.25rem;
+    --font-xl: 1.75rem;
+
+        --shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.15);
+
+    
+    --transition: 0.2s ease;
+}
+
+/* 
+    КАРКАС — GRID (mobile first)
+    */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "aside"
+        "main"
+        "footer";
+    gap: var(--gap);
+    min-height: 100vh;
+    padding: var(--gap);
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.layout__header { grid-area: header; }
+.layout__aside  { grid-area: aside; }
+.layout__main   { grid-area: main; }
+.layout__footer { grid-area: footer; }
+
+/* 
+    ШАПКА — FLEXBOX (mobile first)
+    */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--gap);
+    padding: var(--gap);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.header__logo {
+    font-size: var(--font-xl);
+    font-weight: bold;
+    color: var(--color-accent);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.header__nav {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: background var(--transition), color var(--transition);
+}
+
+.nav__link:hover,
+.nav__link:focus-visible {
+    background: var(--color-accent);
+    color: #fff;
+    outline: none;
+}
+
+.nav__link--active {
+    background: var(--color-accent);
+    color: #fff;
+    font-weight: bold;
+}
+
+.header__actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--gap-sm);
+}
+
+.header__btn {
+    padding: 0.5rem 1rem;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-size: var(--font-base);
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.header__btn:hover,
+.header__btn:focus-visible {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* 
+    БІЧНА ПАНЕЛЬ
+    */
+.aside {
+    padding: var(--gap);
+    background: var(--color-aside-bg);
+    border-radius: var(--radius-lg);
+}
+
+.aside__title {
+    margin: 0 0 var(--gap);
+    font-size: var(--font-lg);
+}
+
+.aside__group {
+    margin-bottom: var(--gap-lg);
+}
+
+.aside__subtitle {
+    margin: 0 0 var(--gap-sm);
+    font-size: var(--font-sm);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.aside__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.aside__item {
+    margin-bottom: 0.25rem;
+}
+
+.aside__label {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+    padding: 0.4rem 0;
+    cursor: pointer;
+    font-size: var(--font-sm);
+}
+
+.aside__checkbox,
+.aside__radio {
+    accent-color: var(--color-accent);
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.aside__btn {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-size: var(--font-base);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.aside__btn:hover,
+.aside__btn:focus-visible {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* 
+   НОВНА ОБЛАСТЬ
+    */
+.main__title {
+    margin: 0 0 var(--gap-sm);
+    font-size: var(--font-xl);
+}
+
+.main__subtitle {
+    margin: 0 0 var(--gap);
+    color: var(--color-text-muted);
+    font-size: var(--font-sm);
+}
+
+.main__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--gap);
+}
+
+/* 
+    КАРТКА
+    */
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover,
+.card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card__img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    padding: var(--gap);
+    flex: 1 1 auto;
+}
+
+.card__title {
+    margin: 0;
+    font-size: var(--font-lg);
+}
+
+.card__text {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-sm);
+    flex: 1 1 auto;
+}
+
+.card__link {
+    align-self: flex-start;
+    padding: 0.4rem 0.9rem;
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-size: var(--font-sm);
+    font-weight: bold;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.card__link:hover,
+.card__link:focus-visible {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* 
+    ПІДВАЛ
+    */
+.footer {
+    padding: var(--gap);
+    background: var(--color-footer-bg);
+    color: var(--color-footer-text);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-sm);
+}
+
+.footer__text {
+    margin: 0;
+}
+
+/* 
+    АДАПТИВНІСТЬ — MOBILE FIRST
+    */
+
+/* - 768px - */
+@media (min-width: 48em) {
+
+    .layout {
+        grid-template-columns: 220px 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header header"
+            "aside  main"
+            "footer footer";
+    }
+
+    .header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header__nav {
+        justify-content: center;
+    }
+
+    .nav__list {
+        flex-direction: row;
+    }
+
+    .header__actions {
+        justify-content: flex-end;
+    }
+}
+
+/* - Десктоп: від 1200px - */
+@media (min-width: 75em) {
+
+    .layout {
+        grid-template-columns: 260px 1fr;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: var(--gap-lg);
+    }
+
+    .main__grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+
+    .aside {
+        position: sticky;
+        top: var(--gap);
+        align-self: start;
+    }
+}
+
+/* 
+    ТЕМНА ТЕМА
+    */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #121417;
+        --color-surface: #1c1f24;
+        --color-text: #e8eaed;
+        --color-text-muted: #9aa0a6;
+        --color-accent: #2f6fed;
+        --color-accent-hover: #1a4fb8;
+        --color-footer-bg: #0a0c0f;
+        --color-aside-bg: #2a2620;
+        --color-border: #2a2e35;
+        --shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+        --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.6);
+    }
+}
+
+/* 
+    ЗМЕНШЕННЯ АНІМАЦІЙ
+    */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
