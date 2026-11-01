@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop — Каталог товарів</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!--  ШАПКА  -->
+    <header class="layout__header header">
+        <a class="header__logo" href="#">Shop</a>
+
+        <nav class="header__nav nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="#">Головна</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#">Каталог</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#">Про нас</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#">Контакти</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header__actions">
+            <button class="header__btn" type="button">Кошик</button>
+        </div>
+    </header>
+
+    <!--  БІЧНА ПАНЕЛЬ  -->
+    <aside class="layout__aside aside">
+        <h2 class="aside__title">Фільтри</h2>
+
+        <div class="aside__group">
+            <h3 class="aside__subtitle">Категорія</h3>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <label class="aside__label">
+                        <input class="aside__checkbox" type="checkbox" checked>
+                        Смартфони
+                    </label>
+                </li>
+                <li class="aside__item">
+                    <label class="aside__label">
+                        <input class="aside__checkbox" type="checkbox">
+                        Ноутбуки
+                    </label>
+                </li>
+                <li class="aside__item">
+                    <label class="aside__label">
+                        <input class="aside__checkbox" type="checkbox">
+                        Навушники
+                    </label>
+                </li>
+                <li class="aside__item">
+                    <label class="aside__label">
+                        <input class="aside__checkbox" type="checkbox">
+                        Аксесуари
+                    </label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="aside__group">
+            <h3 class="aside__subtitle">Ціна</h3>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <label class="aside__label">
+                        <input class="aside__radio" type="radio" name="price" checked>
+                        До 5 000 ₴
+                    </label>
+                </li>
+                <li class="aside__item">
+                    <label class="aside__label">
+                        <input class="aside__radio" type="radio" name="price">
+                        5 000 – 15 000 ₴
+                    </label>
+                </li>
+                <li class="aside__item">
+                    <label class="aside__label">
+                        <input class="aside__radio" type="radio" name="price">
+                        Понад 15 000 ₴
+                    </label>
+                </li>
+            </ul>
+        </div>
+
+        <button class="aside__btn" type="button">Застосувати</button>
+    </aside>
+
+    <!--  ОСНОВНА ОБЛАСТЬ  -->
+    <main class="layout__main main">
+        <h1 class="main__title">Каталог товарів</h1>
+        <p class="main__subtitle">Знайдено 8 товарів</p>
+
+        <div class="main__grid">
+
+            <article class="card">
+                <img class="card__img" src="img/phone.jpg" alt="Смартфон Galaxy X">
+                <div class="card__body">
+                    <h2 class="card__title">Смартфон Galaxy X</h2>
+                    <p class="card__text">6.5", 128 GB, камера 48 МП</p>
+                    <a class="card__link" href="#">Докладніше</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img class="card__img" src="img/laptop.jpg" alt="Ноутбук Pro 15">
+                <div class="card__body">
+                    <h2 class="card__title">Ноутбук Pro 15</h2>
+                    <p class="card__text">Intel i7, 16 GB RAM, SSD 512 GB</p>
+                    <a class="card__link" href="#">Докладніше</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img class="card__img" src="img/headphones.jpg" alt="Навушники AirSound">
+                <div class="card__body">
+                    <h2 class="card__title">Навушники AirSound</h2>
+                    <p class="card__text">Бездротові, шумозаглушення</p>
+                    <a class="card__link" href="#">Докладніше</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img class="card__img" src="img/tablet.jpg" alt="Планшет Tab Mini">
+                <div class="card__body">
+                    <h2 class="card__title">Планшет Tab Mini</h2>
+                    <p class="card__text">8", 64 GB, Wi-Fi</p>
+                    <a class="card__link" href="#">Докладніше</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img class="card__img" src="img/watch.jpg" alt="Смарт-годинник Fit">
+                <div class="card__body">
+                    <h2 class="card__title">Смарт-годинник Fit</h2>
+                    <p class="card__text">Пульсометр, GPS, 7 днів роботи</p>
+                    <a class="card__link" href="#">Докладніше</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img class="card__img" src="img/camera.jpg" alt="Камера ActionCam">
+                <div class="card__body">
+                    <h2 class="card__title">Камера ActionCam</h2>
+                    <p class="card__text">4K, вологозахист, стабілізація</p>
+                    <a class="card__link" href="#">Докладніше</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img class="card__img" src="img/keyboard.jpg" alt="Клавіатура MechPro">
+                <div class="card__body">
+                    <h2 class="card__title">Клавіатура MechPro</h2>
+                    <p class="card__text">Механічна, RGB, підсвітка</p>
+                    <a class="card__link" href="#">Докладніше</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img class="card__img" src="img/mouse.jpg" alt="Мишка Gaming X">
+                <div class="card__body">
+                    <h2 class="card__title">Мишка Gaming X</h2>
+                    <p class="card__text">16000 DPI, бездротова</p>
+                    <a class="card__link" href="#">Докладніше</a>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- ПІДВАЛ  -->
+    <footer class="layout__footer footer">
+        <p class="footer__text">© 2025 Shop. Усі права захищені.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
