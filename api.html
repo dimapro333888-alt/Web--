@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Каталог (ЛР4)</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/api.css">
+</head>
+<body>
+    <div class="layout">
+        <header class="layout__header header">
+            <a class="header__logo" href="index.html">Shop</a>
+            <nav class="header__nav nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="index.html">Головна (ЛР3)</a></li>
+                    <li class="nav__item"><a class="nav__link nav__link--active" href="api.html">API Каталог (ЛР4)</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="layout__main main">
+            <h1 class="main__title">Публікації з REST API</h1>
+            
+            <div class="api-controls">
+                <input type="search" id="search-input" placeholder="Пошук публікацій..." aria-label="Пошук публікацій">
+                <button id="test-parallel" class="main__btn main__btn--primary" style="margin-left: 10px;">Тест Promise.all</button>
+            </div>
+
+            <div id="status" class="api-status"></div>
+            
+            <div class="main__grid" id="posts-list"></div>
+
+            <div class="api-load-more-wrapper">
+                <button id="load-more" class="main__btn main__btn--primary" hidden>Показати ще</button>
+            </div>
+        </main>
+
+        <footer class="layout__footer footer">
+            <p class="footer__text">© 2025 Shop. Усі права захищені.</p>
+        </footer>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
