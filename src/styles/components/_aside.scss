@@ -1,0 +1,80 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.aside {
+  padding: v.$gap;
+  background: var(--color-aside-bg);
+  border-radius: v.$radius-lg;
+
+  @include m.respond-from(v.$bp-desktop) {
+    position: sticky;
+    top: v.$gap;
+    align-self: start;
+  }
+
+  &__title {
+    margin: 0 0 v.$gap;
+    font-size: v.$font-lg;
+  }
+
+  &__group {
+    margin-bottom: v.$gap-lg;
+  }
+
+  &__subtitle {
+    margin: 0 0 v.$gap-sm;
+    font-size: v.$font-sm;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 0.25rem;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: v.$gap-sm;
+    padding: 0.4rem 0;
+    cursor: pointer;
+    font-size: v.$font-sm;
+  }
+
+  &__checkbox,
+  &__radio {
+    accent-color: var(--color-accent);
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: v.$radius;
+    font-size: v.$font-base;
+    font-weight: bold;
+    cursor: pointer;
+    transition:
+      background v.$transition,
+      transform v.$transition;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--color-accent-hover);
+      transform: translateY(-2px);
+      outline: none;
+    }
+  }
+}

@@ -48,10 +48,10 @@
         );
     };
 
-       const rerender = () => {
-        const filtered = getFiltered(); // отримуємо відфільтрований масив
-        App.render.renderList(filtered, state.editingId); // малюємо його
-        App.render.updateStats(state.products.length, filtered); // передаємо ЗАГАЛЬНУ кількість і ВІДФІЛЬТРОВАНУ
+    const rerender = () => {
+        const filtered = getFiltered();
+        App.render.renderList(filtered, state.editingId);
+        App.render.updateStats(state.products.length, filtered);
     };
 
     const commit = () => {
@@ -59,19 +59,9 @@
         rerender();
     };
 
-    const setFieldError = (input, message) => {
-        const field = input.closest(".main__field");
-        const errorEl = field ? field.querySelector('[data-role="error"]') : null;
-        if (errorEl) errorEl.textContent = message || "";
-        if (message) input.setAttribute("aria-invalid", "true");
-        else input.removeAttribute("aria-invalid");
-    };
-
-     const validateForm = () => {
+    const validateForm = () => {
         let ok = true;
         let firstInvalid = null;
-
-        
         const inputs = form.querySelectorAll("input");
         
         inputs.forEach((input) => {
@@ -93,16 +83,14 @@
                 }
 
                 if (errorEl) errorEl.textContent = input.validationMessage;
-                input.setAttribute("aria-invalid", "true"); 
+                input.setAttribute("aria-invalid", "true");
             } else {
                 if (errorEl) errorEl.textContent = "";
                 input.removeAttribute("aria-invalid");
             }
         });
 
-        if (!ok && firstInvalid) {
-            firstInvalid.focus(); 
-        }
+        if (!ok && firstInvalid) firstInvalid.focus();
         return ok;
     };
 

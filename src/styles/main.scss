@@ -1,0 +1,56 @@
+@use 'abstracts/variables' as v;
+@use 'abstracts/mixins' as m;
+
+@use 'base/reset';
+
+@use 'components/header';
+@use 'components/aside';
+@use 'components/card';
+@use 'components/footer';
+@use 'components/api';
+@use 'components/controls';
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    'header'
+    'aside'
+    'main'
+    'footer';
+  gap: v.$gap;
+  min-height: 100vh;
+  padding: v.$gap;
+  background: var(--color-bg);
+  color: var(--color-text);
+
+  &__header {
+    grid-area: header;
+  }
+  &__aside {
+    grid-area: aside;
+  }
+  &__main {
+    grid-area: main;
+  }
+  &__footer {
+    grid-area: footer;
+  }
+
+  @include m.respond-from(v.$bp-tablet) {
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      'header header'
+      'aside  main'
+      'footer footer';
+  }
+
+  @include m.respond-from(v.$bp-desktop) {
+    grid-template-columns: 260px 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: v.$gap-lg;
+  }
+}

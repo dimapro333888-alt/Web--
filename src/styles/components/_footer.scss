@@ -1,0 +1,13 @@
+@use '../abstracts/variables' as v;
+
+.footer {
+  padding: v.$gap;
+  background: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  border-radius: v.$radius-lg;
+  font-size: v.$font-sm;
+
+  &__text {
+    margin: 0;
+  }
+}

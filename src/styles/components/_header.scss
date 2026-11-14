@@ -1,0 +1,103 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: v.$gap;
+  padding: v.$gap;
+  background: var(--color-surface);
+  border-radius: v.$radius-lg;
+  box-shadow: v.$shadow;
+
+  &__logo {
+    font-size: v.$font-xl;
+    font-weight: bold;
+    color: var(--color-accent);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  &__nav {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: v.$gap-sm;
+  }
+
+  &__btn {
+    padding: 0.5rem 1rem;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: v.$radius;
+    font-size: v.$font-base;
+    cursor: pointer;
+    transition:
+      background v.$transition,
+      transform v.$transition;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--color-accent-hover);
+      transform: translateY(-2px);
+      outline: none;
+    }
+  }
+
+  @include m.respond-from(v.$bp-tablet) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &__nav {
+      justify-content: center;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: v.$gap-sm;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include m.respond-from(v.$bp-tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: v.$radius;
+    transition:
+      background v.$transition,
+      color v.$transition;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--color-accent);
+      color: #fff;
+      outline: none;
+    }
+
+    &--active {
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+}
