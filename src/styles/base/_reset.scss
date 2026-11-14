@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as v;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// Темна тема
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #{v.$dark-color-bg};
+    --color-surface: #{v.$dark-color-surface};
+    --color-text: #{v.$dark-color-text};
+    --color-text-muted: #{v.$dark-color-text-muted};
+    --color-footer-bg: #{v.$dark-color-footer-bg};
+    --color-aside-bg: #{v.$dark-color-aside-bg};
+    --color-border: #{v.$dark-color-border};
+  }
+}

@@ -1,0 +1,71 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.main {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: v.$gap;
+
+    @include m.respond-from(v.$bp-desktop) {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-radius: v.$radius-lg;
+  box-shadow: v.$shadow;
+  overflow: hidden;
+  @include m.card-hover;
+
+  &__img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: v.$gap-sm;
+    padding: v.$gap;
+    flex: 1 1 auto;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: v.$font-lg;
+  }
+
+  &__text {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: v.$font-sm;
+    flex: 1 1 auto;
+  }
+
+  &__link {
+    align-self: flex-start;
+    padding: 0.4rem 0.9rem;
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: v.$radius;
+    font-size: v.$font-sm;
+    font-weight: bold;
+    transition:
+      background v.$transition,
+      transform v.$transition;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--color-accent-hover);
+      transform: translateY(-2px);
+      outline: none;
+    }
+  }
+}
