@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop — Каталог товарів</title>
+</head>
+<body>
+<div class="layout">
+    <header class="layout__header header">
+        <a class="header__logo" href="#">Shop</a>
+        <nav class="header__nav nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link nav__link--active" href="#">Головна</a></li>
+                <li class="nav__item"><a class="nav__link" href="api.html">API Каталог</a></li>
+            </ul>
+        </nav>
+        <div class="header__actions"><button class="header__btn" type="button">Кошик</button></div>
+    </header>
+    
+    <aside class="layout__aside aside">
+        <h2 class="aside__title">Фільтри</h2>
+        <div class="aside__group">
+            <h3 class="aside__subtitle">Категорія</h3>
+            <ul class="aside__list" data-role="category-filters">
+                <li class="aside__item"><label class="aside__label"><input class="aside__checkbox" type="checkbox" value="phone" checked> Смартфони</label></li>
+                <li class="aside__item"><label class="aside__label"><input class="aside__checkbox" type="checkbox" value="laptop" checked> Ноутбуки</label></li>
+                <li class="aside__item"><label class="aside__label"><input class="aside__checkbox" type="checkbox" value="headphones" checked> Навушники</label></li>
+                <li class="aside__item"><label class="aside__label"><input class="aside__checkbox" type="checkbox" value="accessories" checked> Аксесуари</label></li>
+            </ul>
+        </div>
+        <div class="aside__group">
+            <h3 class="aside__subtitle">Ціна</h3>
+            <ul class="aside__list" data-role="price-filters">
+                <li class="aside__item"><label class="aside__label"><input class="aside__radio" type="radio" name="price" value="all" checked> Усі ціни</label></li>
+                <li class="aside__item"><label class="aside__label"><input class="aside__radio" type="radio" name="price" value="low"> До 5 000 ₴</label></li>
+                <li class="aside__item"><label class="aside__label"><input class="aside__radio" type="radio" name="price" value="mid"> 5 000 – 15 000 ₴</label></li>
+                <li class="aside__item"><label class="aside__label"><input class="aside__radio" type="radio" name="price" value="high"> Понад 15 000 ₴</label></li>
+            </ul>
+        </div>
+        <div class="aside__group">
+            <h3 class="aside__subtitle">Наявність</h3>
+            <label class="aside__label"><input class="aside__checkbox" type="checkbox" data-role="only-available"> Тільки в наявності</label>
+        </div>
+    </aside>
+
+    <main class="layout__main main">
+        <div class="main__header">
+            <h1 class="main__title">Каталог товарів</h1>
+            <button class="main__add-btn" type="button" data-action="toggle-form">+ Додати товар</button>
+        </div>
+        
+        <form class="main__form" data-role="product-form" hidden novalidate>
+            <div class="main__form-row">
+                <label class="main__field"><span class="main__label">Назва</span><input type="text" name="name" required minlength="2"><span class="main__error" data-role="error"></span></label>
+                <label class="main__field"><span class="main__label">Ціна</span><input type="number" name="price" required min="1"><span class="main__error" data-role="error"></span></label>
+                <label class="main__field"><span class="main__label">Кількість</span><input type="number" name="quantity" required min="1" value="1"><span class="main__error" data-role="error"></span></label>
+                <label class="main__field"><span class="main__label">Категорія</span>
+                    <select name="category">
+                        <option value="phone">Смартфони</option>
+                        <option value="laptop">Ноутбуки</option>
+                        <option value="headphones">Навушники</option>
+                        <option value="accessories">Аксесуари</option>
+                    </select>
+                </label>
+            </div>
+            <div class="main__form-actions">
+                <button type="submit" class="main__btn main__btn--primary">Додати</button>
+                <button type="button" class="main__btn" data-action="cancel-form">Скасувати</button>
+            </div>
+        </form>
+
+        <div class="main__stats">
+            <p>Всього: <strong data-role="count-total">0</strong></p>
+            <p>Відображено: <strong data-role="count-filtered">0</strong></p>
+            <p>Сума: <strong><span data-role="total">0</span> ₴</strong></p>
+        </div>
+
+        <div class="main__controls">
+            <input type="search" data-role="search" placeholder="Пошук...">
+            <select data-role="sort">
+                <option value="name-asc">Назва (А-Я)</option>
+                <option value="name-desc">Назва (Я-А)</option>
+                <option value="price-asc">Ціна ↑</option>
+                <option value="price-desc">Ціна ↓</option>
+            </select>
+        </div>
+
+        <p class="main__empty" data-role="empty" hidden>Нічого не знайдено</p>
+        <div class="main__grid" data-role="list"></div>
+    </main>
+
+    <footer class="layout__footer footer"><p class="footer__text">© 2025 Shop.</p></footer>
+</div>
+<script type="module" src="./js/main.ts"></script>
+</body>
+</html>
