@@ -1,0 +1,39 @@
+@use '../abstracts/variables' as v;
+
+.main__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: v.$gap; }
+.main__add-btn { padding: 0.6rem 1.2rem; background: var(--color-accent); color: #fff; border: none; border-radius: v.$radius; cursor: pointer; font-weight: bold; }
+.main__form { padding: v.$gap; background: var(--color-surface); border-radius: v.$radius-lg; margin-bottom: v.$gap; box-shadow: v.$shadow; &[hidden] { display: none; } }
+.main__form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: v.$gap; margin-bottom: v.$gap; }
+.main__field { display: flex; flex-direction: column; gap: 0.3rem; input, select { padding: 0.5rem; border: 1px solid var(--color-border); border-radius: v.$radius; background: var(--color-bg); color: var(--color-text); } }
+.main__label { font-size: v.$font-sm; font-weight: bold; }
+.main__error { color: #c0392b; font-size: v.$font-sm; min-height: 1.2em; }
+.main__form-actions { display: flex; gap: v.$gap-sm; }
+
+.main__btn { 
+    padding: 0.5rem 1.2rem; 
+    background: var(--color-bg); 
+    color: var(--color-text); 
+    border: 1px solid var(--color-border); 
+    border-radius: v.$radius; 
+    cursor: pointer; 
+    &--primary { background: var(--color-accent); color: #fff; border-color: var(--color-accent); } 
+}
+
+.main__stats { display: flex; gap: v.$gap-lg; flex-wrap: wrap; padding: v.$gap; background: var(--color-surface); border-radius: v.$radius-lg; margin-bottom: v.$gap; box-shadow: v.$shadow; }
+.main__stats p { margin: 0; }
+.main__controls { display: flex; gap: v.$gap; margin-bottom: v.$gap; flex-wrap: wrap; }
+.main__controls input, .main__controls select { padding: 0.6rem; border: 1px solid var(--color-border); border-radius: v.$radius; background: var(--color-surface); color: var(--color-text); flex: 1 1 auto; min-width: 200px; }
+.main__empty { text-align: center; padding: v.$gap-lg; background: var(--color-surface); border-radius: v.$radius-lg; color: var(--color-text-muted); }
+
+.card__btn {
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    border-radius: v.$radius;
+    font-size: v.$font-sm;
+    cursor: pointer;
+    &--toggle { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+    &--delete { color: #c0392b; border-color: #e6b0aa; }
+    &--save { background: #1e8449; color: #fff; border-color: #1e8449; }
+}

@@ -1,0 +1,3 @@
+@use '../abstracts/variables' as v;
+.api-controls { margin-bottom: v.$gap; input { width: 100%; max-width: 400px; padding: 0.6rem; border: 1px solid v.$color-border; border-radius: v.$radius; } }
+.api-status { text-align: center; font-size: v.$font-lg; margin: v.$gap-lg 0; color: v.$color-text-muted; }
